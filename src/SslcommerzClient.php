@@ -233,7 +233,11 @@ class SslcommerzClient
         }
 
         ksort($dataToHash);
-        $hashString = http_build_query($dataToHash, '', '&');
+        $hashString = "";
+        foreach ($dataToHash as $key => $value) {
+            $hashString .= $key . '=' . ($value) . '&';
+        }
+        $hashString = rtrim($hashString, '&');
 
         return md5($hashString) === $data['verify_sign'];
     }
