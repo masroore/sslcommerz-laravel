@@ -233,9 +233,9 @@ class SslcommerzClient
         }
 
         ksort($dataToHash);
-        $hashString = "";
+        $hashString = '';
         foreach ($dataToHash as $key => $value) {
-            $hashString .= $key . '=' . ($value) . '&';
+            $hashString .= $key.'='.($value).'&';
         }
         $hashString = rtrim($hashString, '&');
 
