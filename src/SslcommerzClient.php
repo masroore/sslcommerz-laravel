@@ -235,7 +235,7 @@ class SslcommerzClient
         ksort($dataToHash);
         $hashString = '';
         foreach ($dataToHash as $key => $value) {
-            $hashString .= $key.'='.($value).'&';
+            $hashString .= "$key=$value&";
         }
         $hashString = rtrim($hashString, '&');
 
@@ -274,7 +274,7 @@ class SslcommerzClient
     }
 
     /**
-     * Merge and return all the data needed for making payment.
+     * Merge and return all the data needed to make the payment.
      */
     private function mergeData(array $additionalData = []): array
     {
