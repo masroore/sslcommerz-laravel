@@ -278,7 +278,7 @@ class SslcommerzClient
      */
     private function mergeData(array $additionalData = []): array
     {
-        return $this->data + $this->order + $this->customer + $this->shipping + $additionalData;
+        return array_merge($this->data, $this->order, $this->customer, $this->shipping, $additionalData);
     }
 
     /**
