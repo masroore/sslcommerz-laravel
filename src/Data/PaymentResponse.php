@@ -13,7 +13,7 @@ class PaymentResponse
      */
     public function status(): ?string
     {
-        return isset($this->data['status']) ? strtolower($this->data['status']) : null;
+        return strtolower($this->data['status'] ?? '');
     }
 
     /**
